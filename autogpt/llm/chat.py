@@ -95,7 +95,7 @@ def chat_with_ai(
             #     relevant_memory = str(relevant_memories)
             relevant_memory = ""
             logger.debug(f"Memory Stats: {permanent_memory.get_stats()}")
-
+            logger.info("#################### breakpoint 2 ##############")
             (
                 next_message_to_add_index,
                 current_tokens_used,
@@ -226,8 +226,8 @@ def chat_with_ai(
             logger.debug("------------ CONTEXT SENT TO AI ---------------")
             for message in current_context:
                 # Skip printing the prompt
-                if message["role"] == "system" and message["content"] == prompt:
-                    continue
+                # if message["role"] == "system" and message["content"] == prompt:
+                #     continue
                 logger.debug(f"{message['role'].capitalize()}: {message['content']}")
                 logger.debug("")
             logger.debug("----------- END OF CONTEXT ----------------")
